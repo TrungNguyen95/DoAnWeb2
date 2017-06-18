@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ConnectDBShop.GioHang>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #4B4B4B;
+    }
+
+    th {
+        background-color: #007FFF;
+        color: white;
+    }
+</style>
+
+<h2 style="text-align: center;">Danh sách đơn đặt hàng</h2>
+<table>
+    <tr>
+        <th>Mã Khách Hàng</th>
+        <th>Sản Phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Số lượng</th>
+        <th>Tổng tiền</th>
+        @*<th colspan="2">
+            <a href="@Url.Action("Create", "KhachHang")"><img src="~/Asset/images/addNSX.png" /></a>
+        </th>*@
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaTaiKhoan</td>
+            <td>@item.TenSanPham</td>
+            <td>
+                <img src="~/Asset/img/@item.HinhChinh" style="width:80px; height:100px" />
+            </td>
+            <td>@item.SoLuong</td>
+            <td>@string.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:c}", item.TongTien)</td>
+            
+            @*<td>
+                <a href="@Url.Action("Edit", "KhachHang", new { id = @item.IDGH})"><img src="~/Asset/images/edit.png" /></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Xoa", "KhachHang", new { id = @item.IDGH})"><img src="~/Asset/images/xoa.png" /></a>
+            </td>*@
+        </tr>
+    }
+</table>
+
+
