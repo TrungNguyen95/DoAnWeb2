@@ -1,0 +1,72 @@
+﻿@model ConnectDBShop.SanPham
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 300px;
+        height: 45px;
+        float: left;
+        background-color: #4B4B4B;
+        color: #FFFFFF;
+    }
+
+    input[type=number], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 300px;
+        height: 45px;
+        float: left;
+        background-color: #4B4B4B;
+        color: #FFFFFF;
+    }
+</style>
+<h2 style="text-align:center">Khóa sản phẩm</h2>
+@using (Html.BeginForm("Delete", "SanPham", FormMethod.Post))
+{
+    <table style="width: 70%; margin: auto; background: black">
+        <tr>
+            <td>Mã sản phẩm :</td>
+            <td><input maxlength="11" type="text" name="MaSanPham" required value="@Model.MaSanPham" readonly /></td>
+            <td rowspan="3">
+                <div>
+                    <img id="target" class="img" scr="~/Asset/img/@Model.HinhChinh" alt="----Hiển thị hình đại diện sản phẩm----" style="margin-left:30px; float: right; width: 320px; height: 400px" />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Tên sản phẩm :</td>
+            <td><input type="text" name="TenSanPham" maxlength="20" required value="@Model.TenSanPham" readonly/></td>
+        </tr>
+        <tr>
+            <td>Giá tiền :</td>
+            <td><input type="number" name="Gia" required value="@Model.Gia" readonly/></td>
+        </tr>
+        <tr>
+            <td>Ghi chú :</td>
+            <td><input type="text" name="GhiChu" required value="@Model.GhiChu" readonly/></td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <input style="height:40px; width: 300px; margin-left:32%; background: #0094ff; color: #ffffff; border:1px solid #eee;
+                 border-radius: 20px; box-shadow: 2px 2px 2px #eee;" type="submit" name="btn_ThemSanPham" value="Khóa" /><br><br>
+            </td>
+        </tr>
+    </table>
+}
+
