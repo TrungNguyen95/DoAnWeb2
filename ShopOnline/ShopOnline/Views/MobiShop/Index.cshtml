@@ -23,7 +23,7 @@
                         {
                         <div class="col-lg-4 col-md-4 col-xs-12">
                             <div class="product">
-                                <div class="image"><a href="@Url.Action("Details",new {id = @item.MaSanPham})"><img style="width:200px;height:300px;" src="~/Asset/img/@item.HinhChinh" /></a></div>
+                                <div class="image"><a href="@Url.Action("Details",new {id = @item.MaSanPham})"><img style="width:200px;height:300px;border: 3px outset;border-radius: 15px;" src="~/Asset/img/@item.HinhChinh" /></a></div>
                                 <div class="buttons">
                                     <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
                                     <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
@@ -83,13 +83,19 @@
                 <div class="widget wid-brand">
                     <div class="heading"><h4>BRAND</h4></div>
                     <div class="content">
-                        <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+                        <label class="checkbox"><input type="checkbox" name="brand">Nokia</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Samsung</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Iphone</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">HTC</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Oppo</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Kings</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Zumba</label>
                     </div>
                 </div>
                 <div class="widget wid-product">
-                    <div class="heading"><h4>LATEST</h4></div>
-                    <div class="content">
-                        <div class="product">
+                    <div class="heading"><h4>Bình luận</h4></div>
+                    <div class="content"><div class="fb-comments" data-href="http://localhost:2326/MobiShop" data-width="5" data-numposts="5"></div>
+                        @*<div class="product">
                             <a href="#"><img src="~/Asset/images/galaxy-note.jpg" /></a>
                             <div class="wrapper">
                                 <h5><a href="#">Samsung Galaxy Tab</a></h5>
@@ -112,7 +118,7 @@
                                 <div class="price">$122</div>
                                 <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
                             </div>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>

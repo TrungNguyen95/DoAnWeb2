@@ -12,7 +12,7 @@ namespace ShopOnline.Controllers
     public class MobiShopController : Controller
     {
         // GET: MobiShop
-        public ActionResult Index(int page = 1, int pagesize = 6)
+        public ActionResult Index(int page = 1, int pagesize = 9)
         {
             var db = MobiShopBUS.DanhSachSanPham().ToPagedList(page, pagesize); //su dung topagedlist cua pagelistMVS ms add
             return View(db);

@@ -14,7 +14,7 @@
 
     th, td {
         text-align: center;
-        padding: 9px;
+        padding: 8px;
     }
 
     tr:nth-child(even) {
@@ -45,7 +45,7 @@
             <td>@item.MaTaiKhoan</td>
             <td>@item.TenSanPham</td>
             <td>
-                <img src="~/Asset/img/@item.HinhChinh" style="width:80px; height:100px" />
+                <img src="~/Asset/img/@item.HinhChinh" style="width:80px; height:100px;border: 1px outset;border-radius: 7px;" />
             </td>
             <td>@item.SoLuong</td>
             <td>@string.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:c}", item.TongTien)</td>

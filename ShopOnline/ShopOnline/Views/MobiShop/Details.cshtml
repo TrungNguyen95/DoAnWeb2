@@ -20,20 +20,20 @@
                 <div class="product">
                     <div class="col-md-6">
                         <div class="image">
-                            <img src="~/Asset/img/@Model.HinhChinh" style="width: 300px; height:350px;"/>
+                            <img src="~/Asset/img/@Model.HinhChinh" style="width: 300px; height:350px;border: 3px outset;border-radius: 15px;"/>
                             <div class="image-more">
                                 <ul class="row">
                                     <li class="col-lg-3 col-sm-3 col-xs-4">
-                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh1" style="width: 75px; height:90px;"></a>
+                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh1" style="width: 75px; height:90px;border: 1px outset;border-radius: 5px;"></a>
                                     </li>
                                     <li class="col-lg-3 col-sm-3 col-xs-4">
-                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh2" style="width: 75px; height:90px;"></a>
+                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh2" style="width: 75px; height:90px;border: 1px outset;border-radius: 5px;"></a>
                                     </li>
                                     <li class="col-lg-3 col-sm-3 col-xs-4">
-                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh3" style="width: 75px; height:90px;"></a>
+                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh3" style="width: 75px; height:90px;border: 1px outset;border-radius: 5px;"></a>
                                     </li>
                                     <li class="col-lg-3 col-sm-3 col-xs-4">
-                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh4" style="width: 75px; height:90px;"></a>
+                                        <a href="#"><img class="img-responsive" src="~/Asset/img/@Model.Hinh4" style="width: 75px; height:90px;border: 1px outset;border-radius: 5px;"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -67,15 +67,8 @@
                                 <div class="well">@Html.ActionLink("Vui lòng đăng nhập để thêm giỏ hàng", "Login", "Account")</div>
                              
                             }
-
-
-
-
-
-
-
                             <div class="share well">
-                                <strong style="margin-right: 13px;">Chia sẻ :</strong>
+                                <strong style="margin-right: 13px;">Chia sẽ :</strong>
                                 <a href="#" class="share-btn" target="_blank">
                                     <i class="fa fa-twitter"></i>
                                 </a>
@@ -93,44 +86,25 @@
                 <div class="product-desc">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="#description">Cấu hình chi tiết sản phẩm</a></li>
-                        <li><a href="#review">Bình luận</a>
-                            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
-                        </li>
+                        @*<li><a href="#review">Bình luận</a>*@
                     </ul>
                     <div class="tab-content">
                         <div id="description" class="tab-pane fade in active">
                             @Html.Raw(Model.ChiTietCauHinh) @*Vì dùng ckeditor nên phải bỏ trong thẻ này*@
                         </div>
                         <div id="review" class="tab-pane fade">
-                            <div class="review-text">
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                            </div>
-                            <div class="review-form">
-                                <h4>Write a review</h4>
-                                <form name="form1" id="ff" method="post" action="review.php">
-                                    <label>
-                                        <span>Enter your name:</span>
-                                        <input type="text" name="name" id="name" required>
-                                    </label>
-                                    <label>
-                                        <span>Your message here:</span>
-                                        <textarea name="message" id="message"></textarea>
-                                    </label>
-                                    <div class="text-right">
-                                        <input class="btn btn-default" type="reset" name="reset" value="Reset">
-                                        <input class="btn btn-default" type="submit" name="Submit" value="Submit">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                           
+                                <div class="fb-comments" data-href="http://localhost:2326/MobiShop/Details/A1" data-width="5" data-numposts="5"></div>
+                                
+                        </div>@*hh*@
                     </div>
                 </div>
                 <div class="product-related">
                     <!--<div class="heading"><h2>RELATED PRODUCTS</h2></div>-->
                     <div class="products">
-                        <h2>Sản phẩm liên quan</h2>
+                        
 
-                        @Html.Partial("_SanPhamHot", ShopOnline.Models.BUS.MobiShopBUS.SanPhamHot())
+                        @*@Html.Partial("_SanPhamHot", ShopOnline.Models.BUS.MobiShopBUS.SanPhamHot())*@
 
                         <!--
                             <div class="col-lg-4 col-md-4 col-xs-12">
@@ -218,15 +192,15 @@
                     </div>
                 </div>
                 <div class="widget wid-brand">
-                    <div class="heading"><h4>BRAND</h4></div>
-                    <div class="content">
-                        <label class="checkbox"><input type="checkbox" name="brand">Nokia</label>
+                    <div class="heading"><h4>Bình luận</h4></div>
+                    <div class="content"><div class="fb-comments" data-href="http://localhost:2326/MobiShop/Details/A1" data-width="5" data-numposts="5"></div>
+                        @*<label class="checkbox"><input type="checkbox" name="brand">Nokia</label>
                         <label class="checkbox"><input type="checkbox" name="brand">Samsung</label>
                         <label class="checkbox"><input type="checkbox" name="brand">Iphone</label>
                         <label class="checkbox"><input type="checkbox" name="brand">HTC</label>
                         <label class="checkbox"><input type="checkbox" name="brand">Oppo</label>
                         <label class="checkbox"><input type="checkbox" name="brand">Kings</label>
-                        <label class="checkbox"><input type="checkbox" name="brand">Zumba</label>
+                        <label class="checkbox"><input type="checkbox" name="brand">Zumba</label>*@
                     </div>
                 </div>
                 <div class="widget wid-product">
@@ -262,3 +236,6 @@
         </div>
     </div>
 </div>
+<hr />
+<h2 style="text-align:center;color:red">Sản phẩm liên quan</h2><br />
+@Html.Partial("_SanPhamHot", ShopOnline.Models.BUS.MobiShopBUS.SanPhamHot())
