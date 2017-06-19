@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ConnectDBShop.SanPham>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="heading"><h2 style="text-align:center; color:#FF2A00">Sản phẩm mới nhất</h2></div>
+        <div class="products">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="product">
+                        <div class="image"><a href="@Url.Action("Details","MobiShop", new {id = @item.MaSanPham})"><img style="width:250px;height:300px;border: 3px outset;border-radius: 15px;" src="~/Asset/img/@item.HinhChinh" /></a></div>
+                        <div class="buttons">
+                            <a class="btn cart" href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+                            <a class="btn wishlist" href="#"><span class="glyphicon glyphicon-heart"></span></a>
+                            <a class="btn compare" href="#"><span class="glyphicon glyphicon-transfer"></span></a>
+                        </div>
+                        <div class="caption">
+                            <div class="name"><h3><a href="@Url.Action("Details","MobiShop", new {id = @item.MaSanPham})" style="color:#FF2A00">@item.TenSanPham</a></h3></div>
+                            <div class="price">Giá: <label style="color:#FF5555"> @string.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:c}", item.Gia)</label><span></span></div>
+                            <div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

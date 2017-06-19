@@ -1,0 +1,77 @@
+﻿@*@model IEnumerable<ConnectDBShop.SanPham>*@
+@model PagedList.IPagedList<ConnectDBShop.SanPham>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_MainLayoutAdmin.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+    }
+
+    th, td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #4B4B4B;
+    }
+
+    th {
+        background-color: #007FFF;
+        color: white;
+    }
+</style>
+
+<h2 style="text-align: center;">Quản lý Sản phẩm</h2>
+<table>
+    <tr>
+        <th>Mã Sản Phẩm</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Hình ảnh</th>
+        <th>Giá tiền (VNĐ)</th>
+        <th>Số lượng đã bán</th>
+        <th>Tình trạng</th>
+        <th colspan="2">
+            <a href="@Url.Action("Create", "SanPham")"><img src="~/Asset/images/addNSX.png" /></a>
+        </th>
+    </tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.MaSanPham</td>
+        <td>@item.TenSanPham</td>
+        <td>
+            <img src="~/Asset/img/@item.HinhChinh" style="width:60px; height:90px;border: 1px outset;border-radius: 5px;" />
+        </td>
+        <td>@string.Format(System.Globalization.CultureInfo.GetCultureInfo("vi-VN"), "{0:c}", item.Gia)</td>
+        <td>@item.SoLuongDaBan</td>
+        <td>@item.TinhTrang</td>
+        <td>
+            <a href="@Url.Action("Edit", "SanPham", new { id = @item.MaSanPham})"><img src="~/Asset/images/edit.png" /></a>
+        </td>
+        <td>
+            <a href="@Url.Action("Delete", "SanPham", new { id = @item.MaSanPham})"><img src="~/Asset/images/xoa.png" /></a>
+        </td>
+    </tr>
+}
+
+
+
+
+    <tr>
+        <td colspan="8">@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))</td>
+    </tr>
+
+
+
+
+</table>
+
+
