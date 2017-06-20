@@ -654,12 +654,15 @@
     <Content Include="Asset\images\galaxy-note-4.jpg" />
     <Content Include="Asset\images\galaxy-note.jpg" />
     <Content Include="Asset\images\galaxy-s4.jpg" />
+    <Content Include="Asset\images\iphone-7-plus-red-128gb12.jpg" />
     <Content Include="Asset\images\iphone.png" />
     <Content Include="Asset\images\loading.gif" />
     <Content Include="Asset\images\logo.png" />
     <Content Include="Asset\images\logo1.jpg" />
+    <Content Include="Asset\images\logo1.png" />
     <Content Include="Asset\images\logo2.jpg" />
     <Content Include="Asset\images\logo3.jpg" />
+    <Content Include="Asset\images\logo4.jpg" />
     <Content Include="Asset\images\logofooter.png" />
     <Content Include="Asset\images\maestro-curved-32px.png" />
     <Content Include="Asset\images\next.png" />
